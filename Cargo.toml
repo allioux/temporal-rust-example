@@ -1,0 +1,27 @@
+[package]
+name = "foo"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "worker"
+path = "src/bin/worker.rs"
+
+[[bin]]
+name = "workflow"
+path = "src/bin/workflow.rs"
+
+[lib]
+name = "lib"
+path = "src/lib.rs"
+
+[dependencies]
+temporal-sdk = { git = "https://github.com/temporalio/sdk-core.git", branch = "master" }
+temporal-sdk-core = { git = "https://github.com/temporalio/sdk-core.git", branch = "master" }
+temporal-sdk-core-api = { git = "https://github.com/temporalio/sdk-core.git", branch = "master" }
+temporal-client = { git = "https://github.com/temporalio/sdk-core.git", branch = "master" }
+tokio = { version = "1.41.1", features = ["full"] }
+anyhow = "1.0.93"
+serde = { version = "1.0.215", features = ["derive"] }
+chrono = "0.4.38"
+thiserror = "2.0.4"
